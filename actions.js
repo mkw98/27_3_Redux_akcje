@@ -14,38 +14,42 @@ function addComment(text) {
 	}
 }
 
+const boundAddComment = text => dispatch(addComment(text));
+
+
+
 function removeComment(id) {
 	return {
 		type: REMOVE_COMMENT,
-		id
+		id: id
 	}
 }
+const boundRemoveComment = id => dispatch(removeComment(id));
 
 function editComment(id, text) {
 	return {
 		type: EDIT_COMMENT,
-		id,
-		text
+		id: id,
+		text: text
 	}
 }
+const boundEditComment = (id, text) => dispatch(editComment(id, text));
+
 
 function thumbUpComment(id) {
 	return {
 		type: THUMB_UP_COMMENT,
-		id
+		id: id
 	}
 }
+const boundThumbUpComment = id => dispatch(thumbUpComment(id));
+
 
 function thumbDownComment(id) {
 	return {
 		type: THUMB_DOWN_COMMENT,
-		id
+		id: id
 	}
 }
-
-
-const boundAddComment = text => dispatch(addComment(text));
-const boundRemoveComment = id => dispatch(removeComment(id));
-const boundEditComment = (id, text) => dispatch(editComment(id, text));
-const boundThumbUpComment = id => dispatch(thumbUpComment(id));
 const boundThumbDownComment = id => dispatch(thumbDownComment(id));
+
